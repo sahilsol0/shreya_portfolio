@@ -1,7 +1,9 @@
 import { motion } from 'motion/react'
-// import Header from './Header.jsx'
+import { useLocation } from 'react-router'
 
 function AnimatedPage({children, style}) {
+  const location = useLocation()
+  const isLoading = location.pathname === '/'?true:false
   const containerVariants = {
     initial: { 
       opacity: 1, 
@@ -13,7 +15,7 @@ function AnimatedPage({children, style}) {
       x: 0, 
       scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.9,
         ease: [0.76, 0, 0.24, 1]
       }
     },
@@ -40,10 +42,10 @@ function AnimatedPage({children, style}) {
       filter: 'blur(0px)',
       transition: {
         duration: 0.4,
-        delay: 1.2,
+        delay: isLoading?0.3:1.2,
         ease: 'easeIn'
       }
-    }
+    },
   }
 
   return (

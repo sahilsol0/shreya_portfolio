@@ -1,5 +1,5 @@
 import { ReactLenis } from 'lenis/react'
-import { frame, cancelFrame } from 'motion'
+import { frame, cancelFrame, AnimatePresence} from 'motion/react'
 import { useEffect, useRef } from 'react'
 import Header from "./components/Header.jsx"
 import AnimatedRoute from "./components/AnimatedRoute.jsx"

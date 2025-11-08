@@ -1,14 +1,44 @@
-import {Link} from "react-router"
-import {motion} from "motion/react"
+import {Link, useLocation} from "react-router"
+import {motion, AnimatePresence} from "motion/react"
 
 export default function Header() {
+  const location = useLocation()
+  
   return (
-    <motion.header className="w-screen h-20 bg-amber-300 flex z-10 fixed">
-      <h1>Shreya Solomon.</h1>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-    </motion.header>
+    <AnimatePresence>
+      {location.pathname !== '/' && (
+        <motion.header
+          className="w-screen flex z-10 fixed px-4 py-2"
+          initial={{
+            y: -150,
+            x: -50,
+            opacity: 0
+          }}
+          animate={{
+            y: 0,
+            x: 0,
+            opacity: 1,
+            transition: {
+              delay: 0.8,
+              duration: 0.8,
+              ease: 'easeInOut'
+            }
+          }}
+          exit={{
+            y: -150,
+            opacity: 0,
+            transition: {
+              duration: 0.5
+            }
+          }}
+        >
+          <h1>Shreya Solomon.</h1>
+          <nav>
+            <Link to="/home">Home</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </motion.header>
+      )}
+    </AnimatePresence>
   )
 }
