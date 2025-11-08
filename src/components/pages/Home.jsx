@@ -3,7 +3,7 @@ import AnimatedPage from "../AnimatedPage.jsx"
 
 function Home() {
   return (
-    <AnimatedPage>
+    <AnimatedPage style="bg-red-300">
       <h1 className="text-9xl">Home Page</h1>
     </AnimatedPage>
   )
