@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import {motion, animate, useTransform, useMotionValue} from "motion/react"
 import AnimatedPage from "../AnimatedPage.jsx"
+import CharSplitter from "../CharSplitter.jsx"
 import { useNavigate } from "react-router"
 
 function Counter({className}) {
@@ -30,6 +31,7 @@ function Loading() {
   return (
     <AnimatedPage style="flex place-content-center">
       <Counter className=""/>
+      <CharSplitter str="Hello, from mars" />
     </AnimatedPage>
   )
 }
