@@ -3,7 +3,7 @@ import AnimatedPage from "../AnimatedPage.jsx"
 
 function LifeEvent() {
   return (
-    <AnimatedPage style="bg-white">
+    <AnimatedPage style="">
       <h1 className="text-9xl">Life Event Page</h1>
     </AnimatedPage>
   )

@@ -18,6 +18,13 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => setIsOpen(!isOpen)
+  
+  const links= [
+    {url: '/home', name: 'Home'},
+    {url: '/contact', name: 'Contact'},
+    {url: '/projects', name: 'Projects'},
+    {url: '/other', name: 'Other'},
+  ]
 
   return (
     <AnimatePresence>
@@ -57,15 +64,16 @@ export default function Nav() {
                 className="absolute bottom-0 pb-12"
               >
                 <div className="grid grid-cols-4 gap-4 text-center border">
-                  {
-                    [].map(()=>{
-                      
-                    })
-                  }
-                  <Link to="/home" onClick={toggleMenu} className="hover:text-blue-500">Home</Link>
-                  <Link to="/contact" onClick={toggleMenu} className="hover:text-blue-500">Contact</Link>
-                  <Link to="/projects" onClick={toggleMenu} className="hover:text-blue-500">Projects</Link>
-                  <Link to="/lifeevent" onClick={toggleMenu} className="hover:text-blue-500">Events</Link>
+                  {links.map(link => (
+                    <Link 
+                      key={link.url} 
+                      to={link.url} 
+                      onClick={toggleMenu} 
+                      className="hover:text-blue-500"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
                 </div>
               </motion.nav>
             )}
