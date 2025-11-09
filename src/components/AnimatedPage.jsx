@@ -54,7 +54,7 @@ function AnimatedPage({children, style}) {
       initial="initial"
       animate="animate"
       exit="exit"
-      className={`absolute inset-0 overflow-hidden pt-12 bg-white ${style}`}
+      className={`absolute top-0 left-0 right-0 min-h-screen pt-12 bg-background ${style}`}
     >
       <motion.div variants={childVariants}>
         {/* <Header/> */}

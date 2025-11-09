@@ -8,7 +8,7 @@ export default function Header() {
     <AnimatePresence>
       {location.pathname !== '/' && (
         <motion.header
-          className="w-screen flex z-10 fixed px-4 py-2"
+          className="w-screen flex z-10 fixed px-4 py-2 justify-between"
           initial={{
             y: -150,
             x: -50,
@@ -32,7 +32,34 @@ export default function Header() {
             }
           }}
         >
-          <h1>Shreya Solomon.</h1>
+          <h1 className="font-medium">Shreya Solomon.</h1>
+          <AnimatePresence mode="wait">
+            <motion.p 
+            key={location.pathname}
+              initial={{
+                opacity: 0,
+                x: 20
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  // delay: 1,
+                  duration: 0.4,
+                  ease: [0.76, 0, 0.24, 1]
+                }
+              }}
+              exit={{
+                opacity: 0,
+                x: -10,
+                y: 20,
+                transition: {
+                  duration: 0.4,
+                  ease: [0.76, 0, 0.24, 1]
+                }
+              }}
+            className="font-serif">{location.pathname}</motion.p>
+            </AnimatePresence>
         </motion.header>
       )}
     </AnimatePresence>

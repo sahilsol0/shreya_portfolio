@@ -63,7 +63,7 @@ export default function Nav() {
                 }}
                 className="absolute bottom-0 pb-12"
               >
-                <div className="grid grid-cols-4 gap-4 text-center border">
+                <div className="grid grid-cols-4 gap-4 text-center border bg-background">
                   {links.map(link => (
                     <Link 
                       key={link.url} 

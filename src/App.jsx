@@ -27,7 +27,7 @@ function App() {
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <Header/>
       <Nav />
-      <div className="relative min-h-screen font-sans overflow-hidden">
+      <div className="relative min-h-screen font-sans overflow-x-hidden">
         <AnimatedRoute />
       </div>
     </ReactLenis>
