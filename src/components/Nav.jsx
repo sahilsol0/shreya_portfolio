@@ -30,7 +30,7 @@ export default function Nav() {
     <AnimatePresence>
       {location.pathname !== "/" && (
         <motion.div
-          className="w-screen flex flex-col items-center justify-center z-40 fixed bottom-0 px-4 py-3"
+          className="w-screen flex flex-col items-center justify-center z-40 fixed bottom-0 pb-4"
           initial={{ y: 150, opacity: 0 }}
           animate={{
             y: 0,
@@ -61,9 +61,9 @@ export default function Nav() {
                   opacity: 0,
                   transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
                 }}
-                className="absolute bottom-0 pb-12"
+                className="absolute bottom-0 pb-16"
               >
-                <div className="grid grid-cols-4 gap-4 text-center border bg-background">
+                <div className="grid grid-cols-4 gap-4 text-center border border-primary bg-background">
                   {links.map(link => (
                     <Link 
                       key={link.url} 
