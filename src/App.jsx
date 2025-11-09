@@ -2,6 +2,7 @@ import { ReactLenis } from 'lenis/react'
 import { frame, cancelFrame, AnimatePresence} from 'motion/react'
 import { useEffect, useRef, createContext, useContext, useState } from 'react'
 import Header from "./components/Header.jsx"
+import Nav from "./components/Nav.jsx"
 import AnimatedRoute from "./components/AnimatedRoute.jsx"
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <Header/>
+      <Nav />
       <div className="relative min-h-screen font-sans">
         <AnimatedRoute />
       </div>

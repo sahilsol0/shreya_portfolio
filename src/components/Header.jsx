@@ -33,10 +33,6 @@ export default function Header() {
           }}
         >
           <h1>Shreya Solomon.</h1>
-          <nav>
-            <Link to="/home">Home</Link>
-            <Link to="/contact">Contact</Link>
-          </nav>
         </motion.header>
       )}
     </AnimatePresence>

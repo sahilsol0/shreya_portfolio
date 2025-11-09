@@ -4,6 +4,7 @@
 @theme {
   --font-sans: 'Host Grotesk', system-ui, sans-serif;
   --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --color-primary: oklch(0.5817 0.1068 42.79);
 }
 
 body {

@@ -6,8 +6,8 @@ function AnimatedPage({children, style}) {
   const isLoading = location.pathname === '/'?true:false
   const containerVariants = {
     initial: { 
-      opacity: 1, 
-      x: '100vw',
+      opacity: isLoading?0:1, 
+      x: isLoading?1:'100vw',
       scale: 1
     },
     animate: { 
