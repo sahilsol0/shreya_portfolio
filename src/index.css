@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Host Grotesk', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+}
 
 body {
   background: black;
