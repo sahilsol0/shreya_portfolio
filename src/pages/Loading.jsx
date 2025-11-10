@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import {motion, animate, useTransform, useMotionValue} from "motion/react"
-import AnimatedPage from "../AnimatedPage.jsx"
+import AnimatedPage from "../components/AnimatedPage.jsx"
 import { useNavigate } from "react-router"
 
 function Counter({className}) {

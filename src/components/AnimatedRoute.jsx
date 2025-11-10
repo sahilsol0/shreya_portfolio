@@ -1,10 +1,10 @@
 import { Routes, Route, useLocation } from "react-router"
 import { AnimatePresence } from "motion/react"
-import Home from "./pages/Home.jsx"
-import Contact from "./pages/Contact.jsx"
-import Loading from "./pages/Loading.jsx"
-import Project from "./pages/Project.jsx"
-import LifeEvent from "./pages/LifeEvent.jsx"
+import Home from "../pages/Home.jsx"
+import Contact from "../pages/Contact.jsx"
+import Loading from "../pages/Loading.jsx"
+import Project from "../pages/Project.jsx"
+import LifeEvent from "../pages/LifeEvent.jsx"
 
 function AnimatedRoute() {
   const location = useLocation()

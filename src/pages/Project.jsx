@@ -1,5 +1,5 @@
 import {motion} from "motion/react"
-import AnimatedPage from "../AnimatedPage.jsx"
+import AnimatedPage from "../components/AnimatedPage.jsx"
 
 function Project() {
   return (
