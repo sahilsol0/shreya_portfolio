@@ -8,7 +8,7 @@ export default function Header() {
     <AnimatePresence>
       {location.pathname !== '/' && (
         <motion.header
-          className="w-screen flex z-10 fixed px-4 pt-2 pb-6 justify-between bg-gradient-to-b from-background from-40% to-transparent to-90%"
+          className="w-screen flex fixed z-50 px-4 pt-2 pb-6 justify-between"
           initial={{
             y: -150,
             x: -50,
@@ -32,7 +32,7 @@ export default function Header() {
             }
           }}
         >
-          <h1 className="font-medium">Shreya Solomon.</h1>
+          <h1 className="font-medium"><Link to="/home">Shreya Solomon.</Link></h1>
           <AnimatePresence mode="wait">
             <motion.p 
             key={location.pathname}

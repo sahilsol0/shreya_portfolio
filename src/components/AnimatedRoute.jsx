@@ -10,7 +10,7 @@ function AnimatedRoute() {
   const location = useLocation()
 
   return (
-    <AnimatePresence mode="sync">
+    <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Loading/>}/>
         <Route path="/home" element={<Home/>}/>
