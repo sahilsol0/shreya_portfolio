@@ -1,7 +1,8 @@
 import { motion } from 'motion/react'
 import { useLocation } from 'react-router'
+import Footer from "./Footer.jsx"
 
-function AnimatedPage({children, style}) {
+function AnimatedPage({children, className}) {
   const location = useLocation()
   const isLoading = location.pathname === '/'?true:false
   const containerVariants = {
@@ -49,18 +50,19 @@ function AnimatedPage({children, style}) {
   }
 
   return (
-    <motion.div
+    <motion.main
       variants={containerVariants}
       initial="initial"
       animate="animate"
       exit="exit"
-      className={`absolute top-0 left-0 right-0 min-h-screen pt-12 bg-background ${style}`}
+      className={`absolute top-0 left-0 right-0 min-h-screen pt-10 bg-background ${className || ""}`}
     >
       <motion.div variants={childVariants}>
         {/* <Header/> */}
         {children}
       </motion.div>
-    </motion.div>
+      <Footer />
+    </motion.main>
   )
 }
 

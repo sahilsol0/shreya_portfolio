@@ -6,7 +6,7 @@ function MenuButton({ isOpen, toggle }) {
   return (
     <button
       onClick={toggle}
-      className="px-4 py-2 z-50"
+      className="px-4 py-2 border-b border-primary z-50"
     >
       {isOpen ? "Close" : "Menu"}
     </button>
@@ -30,7 +30,7 @@ export default function Nav() {
     <AnimatePresence>
       {location.pathname !== "/" && (
         <motion.div
-          className="w-screen flex flex-col items-center justify-center z-40 fixed bottom-0 pb-4"
+          className="w-screen flex flex-col items-center justify-center z-40 fixed bottom-0 pb-4 bg-gradient-to-t from-background from-40% to-transparent to-90%"
           initial={{ y: 150, opacity: 0 }}
           animate={{
             y: 0,

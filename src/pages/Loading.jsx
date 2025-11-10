@@ -28,7 +28,7 @@ function Loading() {
   }, [navigate])
 
   return (
-    <AnimatedPage style="flex place-content-center">
+    <AnimatedPage className="flex place-content-center">
       <Counter className=""/>
     </AnimatedPage>
   )

@@ -8,7 +8,7 @@ export default function Header() {
     <AnimatePresence>
       {location.pathname !== '/' && (
         <motion.header
-          className="w-screen flex z-10 fixed px-4 py-2 justify-between"
+          className="w-screen flex z-10 fixed px-4 pt-2 pb-6 justify-between bg-gradient-to-b from-background from-40% to-transparent to-90%"
           initial={{
             y: -150,
             x: -50,
