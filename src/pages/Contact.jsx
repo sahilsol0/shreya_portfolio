@@ -1,5 +1,5 @@
 import {motion} from "motion/react"
-import AnimatedPage from "../components/AnimatedPage.jsx"
+import PageLayout from "../components/PageLayout.jsx"
 
 function Contact() {
   const socials = [
@@ -7,9 +7,8 @@ function Contact() {
     { platform: 'Whatsapp', linkText: '8696621129', link: 'https://wa.me/+918696621129'}
     ]
   return (
-    <AnimatedPage>
-      <section className="px-4 pt-20">
-        <h1 className="text-5xl font-serif border-b border-primary">Contact me.</h1>
+    <PageLayout>
+      <h1 className="text-5xl font-serif border-b border-primary">Contact me.</h1>
         <p className="text-sm mt-4">Currently you can only contact me through mail. Don't worry more links will be added in future.</p>
         <ul className="flex flex-col gap-8 mt-12">
           {socials.map((social, i)=> (
@@ -21,8 +20,7 @@ function Contact() {
             </li>
           ))}
         </ul>
-      </section>
-    </AnimatedPage>
+    </PageLayout>
   )
 }
 

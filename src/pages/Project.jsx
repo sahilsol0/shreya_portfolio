@@ -1,11 +1,11 @@
 import {motion} from "motion/react"
-import AnimatedPage from "../components/AnimatedPage.jsx"
+import PageLayout from "../components/PageLayout.jsx"
 
 function Project() {
   return (
-    <AnimatedPage>
-      <h1 className="text-9xl">Project Page</h1>
-    </AnimatedPage>
+    <PageLayout>
+      <h1 className="text-9xl">Project page.</h1>
+    </PageLayout>
   )
 }
 

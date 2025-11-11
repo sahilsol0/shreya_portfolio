@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import {motion, animate, useTransform, useMotionValue} from "motion/react"
-import AnimatedPage from "../components/AnimatedPage.jsx"
 import { useNavigate } from "react-router"
+import AnimatedPage from "../components/AnimatedPage.jsx"
 
 function Counter({className}) {
     const count = useMotionValue(0)
@@ -29,7 +29,7 @@ function Loading() {
 
   return (
     <AnimatedPage>
-      <Counter className=""/>
+      <Counter className="text-3xl font-serif"/>
     </AnimatedPage>
   )
 }

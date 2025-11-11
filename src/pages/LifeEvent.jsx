@@ -1,11 +1,11 @@
 import {motion} from "motion/react"
-import AnimatedPage from "../components/AnimatedPage.jsx"
+import PageLayout from "../components/PageLayout.jsx"
 
 function LifeEvent() {
   return (
-    <AnimatedPage>
+    <PageLayout>
       <h1 className="text-9xl">Life Event Page</h1>
-    </AnimatedPage>
+    </PageLayout>
   )
 }
 

@@ -5,61 +5,36 @@ export default function Header() {
   const location = useLocation()
   
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {location.pathname !== '/' && (
         <motion.header
+          key= {location.pathname}
           className="w-screen flex fixed z-50 px-4 pt-2 pb-6 justify-between"
           initial={{
-            y: -150,
-            x: -50,
+            y: 0,
             opacity: 0
           }}
           animate={{
             y: 0,
-            x: 0,
             opacity: 1,
             transition: {
-              delay: 0.8,
+              delay: 0.4,
               duration: 0.8,
-              ease: 'easeInOut'
+              ease: [0.76, 0, 0.24, 1]
             }
           }}
           exit={{
-            y: -150,
+            y: 10,
+            x: -8,
             opacity: 0,
             transition: {
-              duration: 0.5
+              duration: 0.4,
+              ease: [0.76, 0, 0.24, 1]
             }
           }}
         >
           <h1 className="font-medium"><Link to="/home">Shreya Solomon.</Link></h1>
-          <AnimatePresence mode="wait">
-            <motion.p 
-            key={location.pathname}
-              initial={{
-                opacity: 0,
-                x: 20
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-                transition: {
-                  // delay: 1,
-                  duration: 0.4,
-                  ease: [0.76, 0, 0.24, 1]
-                }
-              }}
-              exit={{
-                opacity: 0,
-                x: -10,
-                y: 20,
-                transition: {
-                  duration: 0.4,
-                  ease: [0.76, 0, 0.24, 1]
-                }
-              }}
-            className="font-serif">{location.pathname}</motion.p>
-            </AnimatePresence>
+            <p className="font-serif">{location.pathname}</p>
         </motion.header>
       )}
     </AnimatePresence>

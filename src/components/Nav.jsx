@@ -15,8 +15,8 @@ function MenuButton({ isOpen, toggle }) {
 
 export default function Nav() {
   const location = useLocation()
+  
   const [isOpen, setIsOpen] = useState(false)
-
   const toggleMenu = () => setIsOpen(!isOpen)
   
   const links= [
@@ -27,20 +27,21 @@ export default function Nav() {
   ]
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {location.pathname !== "/" && (
         <motion.div
-          className="w-screen flex flex-col items-center justify-center z-40 fixed bottom-0 pb-4 bg-gradient-to-t from-background from-40% to-transparent to-90%"
+          className="w-screen flex flex-col items-center justify-center fixed bottom-0 pb-4 z-50 bg-gradient-to-t from-background from-45% to-transparent"
+          key= {location.pathname}
           initial={{ y: 150, opacity: 0 }}
           animate={{
             y: 0,
             opacity: 1,
-            transition: { delay: 0.8, duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+            transition: { delay: 0.4, duration: 0.8, ease: [0.76, 0, 0.24, 1] },
           }}
           exit={{
             y: 150,
             opacity: 0,
-            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+            transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
           }}
         >
           <MenuButton isOpen={isOpen} toggle={toggleMenu} />

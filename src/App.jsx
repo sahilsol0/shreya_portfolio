@@ -1,5 +1,5 @@
 import { ReactLenis } from 'lenis/react'
-import { frame, cancelFrame, AnimatePresence} from 'motion/react'
+import { frame, cancelFrame, AnimatePresence } from 'motion/react'
 import { useEffect, useRef, createContext, useContext, useState } from 'react'
 import Header from "./components/Header.jsx"
 import Nav from "./components/Nav.jsx"
