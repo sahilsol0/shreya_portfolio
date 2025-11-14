@@ -1,11 +1,13 @@
+import { useEffect, useRef, createContext, useContext, useState } from 'react'
 import { ReactLenis } from 'lenis/react'
 import { frame, cancelFrame, AnimatePresence } from 'motion/react'
-import { useEffect, useRef, createContext, useContext, useState } from 'react'
+import { useLocation } from "react-router"
 import Header from "./components/Header.jsx"
 import Nav from "./components/Nav.jsx"
 import AnimatedRoute from "./components/AnimatedRoute.jsx"
 
 function App() {
+  const location = useLocation()
   const lenisRef = useRef(null)
 
   useEffect(() => {
@@ -25,9 +27,9 @@ function App() {
 
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
-      <Header/>
-      <Nav />
-      <div className="relative font-sans">
+      {location.pathname === '/summary' ? '' : <Header/>}
+      {location.pathname === '/summary' ? '' : <Nav />}
+      <div className="relative font-sans bg-background text-foreground">
         <AnimatedRoute />
       </div>
     </ReactLenis>

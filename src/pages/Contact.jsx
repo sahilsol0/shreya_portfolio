@@ -4,7 +4,8 @@ import PageLayout from "../components/PageLayout.jsx"
 function Contact() {
   const socials = [
     { platform: 'Mail', linkText: 'shreyasolomon25@gmail.com', link: 'mailto:shreyasolomon25@gmail.com'},
-    { platform: 'Whatsapp', linkText: '8696621129', link: 'https://wa.me/+918696621129'}
+    { platform: 'Linkedin', linkText: 'shreyasolomon', link: '#'},
+    { platform: 'Twitter', linkText: 'shreyasolomon', link: '#'},
     ]
   return (
     <PageLayout>
@@ -13,13 +14,26 @@ function Contact() {
         <ul className="flex flex-col gap-8 mt-12">
           {socials.map((social, i)=> (
             <li key={i} 
-              className="flex flex-col bg-primary/0 rounded"
+              className="flex border-b border-primary gap-2"
             >
-              <h1>{social.platform}</h1>
-              <a href={social.link} target="redirect" className="text-primary border-b">{social.linkText}</a>
+              <a href={social.link} target="redirect" className="bg-primary w-12 h-12 text-2xl text-background flex items-center justify-center leading-none">{i+1}</a>
+              <span className="flex flex-col">
+                <h1>{social.platform}</h1>
+                <a href={social.link} target="redirect" className="text-primary">{social.linkText}</a>
+              </span>
             </li>
           ))}
         </ul>
+        <motion.div 
+          whileInView={{ x: [100, -50, 160], y: [-150, 14, -95], opacity: 0.7 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: 'mirror',
+            repeatDelay: 1,
+            ease: 'easeInOut'
+          }}
+          className="absolute place-self-center justify-self-center bg-primary/60 h-96 w-36 blur-0 -z-20 rounded-full blur-3xl"></motion.div>
     </PageLayout>
   )
 }

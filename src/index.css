@@ -4,10 +4,12 @@
 @theme {
   --font-sans: 'Host Grotesk', system-ui, sans-serif;
   --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
-  --color-primary: oklch(0.5817 0.1068 42.79);
-  --color-background: oklch(0.8789 0.0485 67.26);
+  --color-primary: oklch(0.5257 0.1218 42.56);
+  --color-background: oklch(0.885 0.0331 85.48);
+  --color-foreground: oklch(0.3228 0.0551 28.83);
 }
 
 body {
   background: black;
+  /* color: var(--color-foreground); */
 }

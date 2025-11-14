@@ -4,12 +4,15 @@ import { motion, AnimatePresence } from "motion/react"
 
 function MenuButton({ isOpen, toggle }) {
   return (
-    <button
+    <motion.button
       onClick={toggle}
-      className="px-4 py-2 border-b border-primary z-50"
+      whileTap= {{
+        scale: 0.9
+      }}
+      className="px-4 py-2 border border-primary z-50 bg-background"
     >
       {isOpen ? "Close" : "Menu"}
-    </button>
+    </motion.button>
   )
 }
 
@@ -30,7 +33,7 @@ export default function Nav() {
     <AnimatePresence mode="wait">
       {location.pathname !== "/" && (
         <motion.div
-          className="w-screen flex flex-col items-center justify-center fixed bottom-0 pb-4 z-50 bg-gradient-to-t from-background from-45% to-transparent"
+          className="w-screen flex flex-col items-center justify-center fixed bottom-0 pb-4 z-50 text-foreground"
           key= {location.pathname}
           initial={{ y: 150, opacity: 0 }}
           animate={{
@@ -51,26 +54,28 @@ export default function Nav() {
             {isOpen && (
               <motion.nav
                 key="menu"
-                initial={{ y: 100, opacity: 0 }}
+                initial={{ y: 10, opacity: 0.5, scale:0.9 }}
                 animate={{
                   y: 0,
                   opacity: 1,
-                  transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+                  scale: 1,
+                  transition: { duration: 0.05, ease: 'easeOut' },
                 }}
                 exit={{
-                  y: 100,
+                  y: 10,
                   opacity: 0,
-                  transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
+                  scale:0.9,
+                  transition: { duration: 0.1, ease: 'easeIn' },
                 }}
-                className="absolute bottom-0 pb-16"
+                className="absolute bottom-0 pb-18"
               >
-                <div className="grid grid-cols-4 gap-4 text-center border border-primary bg-background">
+                <div className="flex items-center gap-4 border border-primary bg-background py-1 px-4">
                   {links.map(link => (
                     <Link 
                       key={link.url} 
                       to={link.url} 
-                      onClick={toggleMenu} 
-                      className="hover:text-blue-500"
+                      onClick={toggleMenu}
+                      className= {`${location.pathname===link.url ? 'font-serif text-primary':'font-sans'} hover:text-primary`}
                     >
                       {link.name}
                     </Link>

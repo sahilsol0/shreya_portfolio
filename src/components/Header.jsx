@@ -9,7 +9,7 @@ export default function Header() {
       {location.pathname !== '/' && (
         <motion.header
           key= {location.pathname}
-          className="w-screen flex fixed z-50 px-4 pt-2 pb-6 justify-between"
+          className="w-screen flex fixed z-50 px-4 pt-2 pb-6 justify-between text-foreground bg-gradient-to-b from-background from-40% to-transparent"
           initial={{
             y: 0,
             opacity: 0
