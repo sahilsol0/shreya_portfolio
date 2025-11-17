@@ -1,6 +1,8 @@
-import { useRef, useState, forwardRef } from "react"
+import { useRef, useState, useContext } from "react"
 import { motion, useScroll, useMotionValueEvent } from 'motion/react'
 import { useLocation } from 'react-router'
+import { ScrollContext } from "./ScrollContext.js"
+import Footer from "./Footer.jsx"
 
 const slide = {
   initial: { left: '100vw', opacity: 0 },
@@ -44,7 +46,7 @@ const perspective = {
     y: 100,
     scale: 0.9,
     opacity: 0.5,
-    filter: 'blur(5px)',
+    filter: 'blur(3px)',
     transition: { 
       duration: 0.6, 
       ease: [0.76, 0, 0.24, 1] 
@@ -72,8 +74,8 @@ const blur = {
     opacity: 1,
     filter: "blur(0px)",
     transition: { 
-      duration: 0.3, 
-      delay: 0.2,
+      duration: 0.2, 
+      delay: 0.1,
       ease: 'easeOut'
     }
   },
@@ -84,7 +86,7 @@ const blur = {
   }
 };
 
-const AnimatedPage= forwardRef(function AnimatedPage({children}, ref) {
+function AnimatedPage({children}) {
   const location = useLocation()
   const anim = (variants) => ({
     initial: 'initial',
@@ -92,7 +94,7 @@ const AnimatedPage= forwardRef(function AnimatedPage({children}, ref) {
     exit: 'exit',
     variants
   })
-  
+  const ref= useRef(null)
   return (
     <div className="fixed inset-0 overflow-hidden">
       <motion.div
@@ -104,12 +106,15 @@ const AnimatedPage= forwardRef(function AnimatedPage({children}, ref) {
         {...anim(perspective)}
         ref= {ref}
       >
-        <motion.div {...anim(blur)}>
-          {children}
-        </motion.div>
+        <ScrollContext value={ref}>
+          <motion.div {...anim(blur)}>
+            <section className="pt-20 px-4 min-h-lvh">{children}</section>
+            <Footer/>
+          </motion.div>
+        </ScrollContext>
       </motion.div>
     </div>
   )
-})
+}
 
 export default AnimatedPage

@@ -1,5 +1,4 @@
 import {motion} from "motion/react"
-import PageLayout from "../components/PageLayout.jsx"
 
 function Contact() {
   const socials = [
@@ -8,7 +7,7 @@ function Contact() {
     { platform: 'Twitter', linkText: 'shreyasolomon', link: '#'},
     ]
   return (
-    <PageLayout>
+    <section>
       <h1 className="text-5xl font-serif border-b border-primary">Contact me.</h1>
         <p className="text-sm mt-4">Currently you can only contact me through mail. Don't worry more links will be added in future.</p>
         <ul className="flex flex-col gap-8 mt-12">
@@ -34,7 +33,7 @@ function Contact() {
             ease: 'easeInOut'
           }}
           className="absolute place-self-center justify-self-center bg-primary/60 h-96 w-36 blur-0 -z-20 rounded-full blur-3xl"></motion.div>
-    </PageLayout>
+    </section>
   )
 }
 
