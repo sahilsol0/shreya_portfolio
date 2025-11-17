@@ -11,25 +11,19 @@ function App() {
   const lenisRef = useRef(null)
 
   useEffect(() => {
-    function update(frameData) {
-      lenisRef.current?.lenis?.raf(frameData.timestamp)
+    function update({ timestamp }) {
+      const time = timestamp
+      lenisRef.current?.lenis?.raf(time)
     }
-    const unsubscribe = frame.update(update, true)
-
-    return () => {
-      if (typeof unsubscribe === 'function') {
-        unsubscribe()
-      } else {
-        cancelFrame(update)
-      }
-    }
+    frame.update(update, true)
+    return () => cancelFrame(update)
   }, [])
 
   return (
-    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
-      {location.pathname === '/summary' ? '' : <Header/>}
-      {location.pathname === '/summary' ? '' : <Nav />}
-      <div className="relative font-sans bg-background text-foreground">
+    <ReactLenis root options={{ autoRaf: false , lerp: 0.1, duration: 1.5, smoothTouch: true}} ref={lenisRef}>
+      {location.pathname === '/summary' ? null : <Header/>}
+      {location.pathname === '/summary' ? null : <Nav />}
+      <div className="relative font-sans bg-background">
         <AnimatedRoute />
       </div>
     </ReactLenis>

@@ -1,28 +1,42 @@
 import { motion, useTransform } from "motion/react"
 
-export default function HeroArt() {
+export default function HeroArt({ baseProgress }) {
+  
+  const backgroundY = useTransform(baseProgress, [0, 1], ["0%", "10%"])
+  const midgroundY = useTransform(baseProgress, [0, 1], ["0%", "5%"])
+
   return (
     <>
-    <div className="relative w-full h-full">
-      <div className="absolute inset-0 flex items-end">
-        <div style={{}} className="w-6/12 h-2/3 border border-b-0 border-primary bg-primary/20 rounded-t-full"></div>
-      <div style={{}} className="w-6/12 h-full border border-b-0 border-primary bg-primary/20 rounded-t-full"></div>
+      <div className="relative w-full h-full will-change-transform">
+        
+        <motion.div 
+          style={{ y: backgroundY }} 
+          className="absolute inset-0 flex items-end"
+        >
+          <div className="w-6/12 h-2/3 border border-b-0 border-primary bg-primary/20 rounded-t-full"></div>
+          <div className="w-6/12 h-full border border-b-0 border-primary bg-primary/20 rounded-t-full"></div>
+        </motion.div>
+
+        <motion.div 
+          style={{ y: midgroundY }} 
+          className="absolute inset-0 flex items-end"
+        >
+          <div className="w-2/12 h-2/12 border border-b-0 border-primary bg-primary/20 rounded-t-full"></div>
+          <div className="w-4/12 h-4/12 border border-b-0 border-primary bg-primary/20  rounded-t-full"></div>
+          <div className="w-4/12 h-10/12 border border-b-0 border-primary bg-primary/20  rounded-t-full"></div>
+          <div className="w-4/12 h-8/12 border border-b-0 border-primary bg-primary/20  rounded-t-full"></div>
+        </motion.div>
+
       </div>
-      <div className="absolute inset-0 flex items-end">
-        <div style={{}} className="w-2/12 h-2/12 border border-b-0 border-primary bg-primary/20 rounded-t-full"></div>
-      <div style={{}} className="w-4/12 h-4/12 border border-b-0 border-primary bg-primary/20  rounded-t-full"></div>
-      <div style={{}} className="w-4/12 h-10/12 border border-b-0 border-primary bg-primary/20  rounded-t-full"></div>
-      <div style={{}} className="w-4/12 h-8/12 border border-b-0 border-primary bg-primary/20  rounded-t-full"></div>
+
+      <div className="absolute top-0 mx-auto h-full aspect-square grid grid-cols-6 grid-rows-6">
+        <div className="col-start-3 col-span-2 row-start-6 bg-primary"></div>
+        <div className="col-start-2 row-start-4 row-span-3 bg-primary"></div>
+        <div className="col-start-5 row-start-5 row-span-2 bg-primary"></div>
+        <div className="col-start-3 row-start-5 bg-primary"></div>
+        <div className="col-start-4 row-start-4 bg-primary"></div>
+        <div className="col-start-2 row-start-6 bg-slate-900/20 rounded-t-full ml-2 w-2/3"></div>
       </div>
-    </div>
-    <div className="absolute top-0 mx-auto h-full aspect-square grid grid-cols-6 grid-rows-6">
-      <div className="col-start-3 col-span-2 row-start-6 bg-primary"></div>
-      <div className="col-start-2 row-start-4 row-span-3 bg-primary"></div>
-      <div className="col-start-5 row-start-5 row-span-2 bg-primary"></div>
-      <div className="col-start-3 row-start-5 bg-primary"></div>
-      <div className="col-start-4 row-start-4 bg-primary"></div>
-      <div className="col-start-2 row-start-6 bg-slate-900/20 rounded-t-full ml-2 w-2/3"></div>
-    </div>
     </>
-    )
+  )
 }

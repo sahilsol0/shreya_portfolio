@@ -54,25 +54,9 @@ const perspective = {
   }
 };                                                                               
 const opacity = { 
-  initial: { opacity: 0 },
+  initial: false,
   enter: {
     opacity: 1,
-    transition: { 
-      duration: 0.6, 
-      delay: 0.3 
-    }
-  },
-  exit: {
-    opacity: 1,
-    transition: { duration: 0.4 }
-  }
-};
-
-const blur = { 
-  initial: { opacity: 0, filter: "blur(2px)" },
-  enter: {
-    opacity: 1,
-    filter: "blur(0px)",
     transition: { 
       duration: 0.2, 
       delay: 0.1,
@@ -81,10 +65,9 @@ const blur = {
   },
   exit: {
     opacity: 1,
-    filter: "blur(0px)",
     transition: { duration: 0.3 }
   }
-};
+}
 
 function AnimatedPage({children}) {
   const location = useLocation()
@@ -96,6 +79,7 @@ function AnimatedPage({children}) {
   })
   const ref= useRef(null)
   return (
+    <ScrollContext value={ref}>
     <div className="fixed inset-0 overflow-hidden">
       <motion.div
         className="fixed inset-0 z-50 pointer-events-none bg-background"
@@ -106,14 +90,14 @@ function AnimatedPage({children}) {
         {...anim(perspective)}
         ref= {ref}
       >
-        <ScrollContext value={ref}>
-          <motion.div {...anim(blur)}>
+        
+          <motion.div>
             <section className="pt-20 px-4 min-h-lvh">{children}</section>
-            <Footer/>
+            {location.pathname==='/'?null:<Footer/>}
           </motion.div>
-        </ScrollContext>
       </motion.div>
     </div>
+    </ScrollContext>
   )
 }
 

@@ -21,7 +21,7 @@ function AnimatedRoute() {
         <Route path="/contact" element={<AnimatedPage><Contact/></AnimatedPage>} />
         <Route path="/projects" element={<AnimatedPage><Project/></AnimatedPage>} />
         <Route path="/other" element={<AnimatedPage><LifeEvent/></AnimatedPage>} />
-        <Route path="/summary" element={<AnimatedPage><Accessibility/></AnimatedPage>} replace={true} />
+        <Route path="/summary" element={<Accessibility/>} />
         <Route path='*' element={<AnimatedPage><NotFound/></AnimatedPage>} />
       </Routes>
     </AnimatePresence>

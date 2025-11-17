@@ -1,23 +1,6 @@
 import { useEffect, useState } from "react"
 import { motion, animate, useTransform, useMotionValue, AnimatePresence } from "motion/react"
 import { useNavigate, Link } from "react-router"
-import AnimatedPage from "../components/AnimatedPage.jsx"
-
-function Counter({ className, duration }) {
-  const count = useMotionValue(0)
-  const rounded = useTransform(() => Math.round(count.get()))
-
-  useEffect(() => {
-    const controls = animate(count, 100, { duration })
-    return () => controls.stop()
-  }, [count, duration])
-
-  return (
-    <motion.pre className={className}>
-      {rounded}
-    </motion.pre>
-  )
-}
 
 function Loading() {
   const navigate = useNavigate()
@@ -54,12 +37,11 @@ function Loading() {
     )
   }
   return (
-    <AnimatedPage>
-      <motion.div animate={{opacity: 1}} className="text-7xl font-serif h-[100svh] flex flex-col items-center justify-center text-center bg-background text-foreground">
+    <>
+      <motion.div animate={{opacity: 1}} className="text-7xl h-svh font-serif flex flex-col items-center justify-between text-center bg-background text-foreground">
         <h1>Portfolio of Shreya Solomon.</h1>
-        <Counter className="fixed bottom-0 font-serif" duration={duration} />
       </motion.div>
-    </AnimatedPage>
+    </>
   )
 }
 
