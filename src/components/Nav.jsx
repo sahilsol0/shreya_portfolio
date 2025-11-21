@@ -54,12 +54,12 @@ export default function Nav() {
             {isOpen && (
               <motion.nav
                 key="menu"
-                initial={{ y: 10, opacity: 0.5, scale:0.9 }}
+                initial={{ y: 10, opacity: 0, scale:0.9 }}
                 animate={{
                   y: 0,
                   opacity: 1,
                   scale: 1,
-                  transition: { duration: 0.05, ease: 'easeOut' },
+                  transition: { duration: 0.1, ease: 'easeIn' },
                 }}
                 exit={{
                   y: 10,
@@ -69,7 +69,7 @@ export default function Nav() {
                 }}
                 className="absolute bottom-0 pb-18"
               >
-                <div className="flex items-center gap-4 border border-primary bg-background py-1 px-4">
+                <div className="origin-bottom flex items-center gap-4 border border-primary bg-background py-1 px-4">
                   {links.map(link => (
                     <Link 
                       key={link.url} 

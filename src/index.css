@@ -11,5 +11,6 @@
 
 body {
   background: black;
+  box-sizing: border-box;
   /* color: var(--color-foreground); */
 }

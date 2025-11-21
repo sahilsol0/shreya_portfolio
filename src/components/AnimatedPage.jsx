@@ -86,13 +86,13 @@ function AnimatedPage({children}) {
         {...anim(slide)}
       />
       <motion.div
-        className="fixed inset-0 overflow-y-auto overflow-x-hidden bg-background"
+        className="fixed inset-0 overflow-y-auto overflow-x-hidden bg-background text-foreground"
         {...anim(perspective)}
         ref= {ref}
       >
         
           <motion.div>
-            <section className="pt-20 px-4 min-h-lvh">{children}</section>
+            <section className="pt-20 px-4 min-h-lvh selection:bg-primary selection:text-background">{children}</section>
             {location.pathname==='/'?null:<Footer/>}
           </motion.div>
       </motion.div>

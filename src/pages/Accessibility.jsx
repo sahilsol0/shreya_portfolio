@@ -72,7 +72,7 @@ function Accessibility() {
     </motion.main>
     <motion.button
         onClick={() => setIsLight(!isLight)}
-        className={`fixed bottom-0 px-0.5 ${
+        className={`fixed bottom-0 right-0 px-0.5 ${
           isLight ? "bg-primary text-background" : "bg-background text-primary"
         }`}
       >

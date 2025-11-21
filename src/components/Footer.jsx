@@ -15,15 +15,15 @@ export default function Footer() {
       </div>
       <div className="h-16 bg-gradient-to-t from-background from-40% to-transparent"></div>
       <motion.div
-        whileInView={{ x: [100, -50, 160], y: [-150, 14, -95], opacity: 0.7 }}
+        whileInView={{ x: [100, -75], y: [-10, 14, -87], rotate: [-8, 0, 4, -10] }}
         transition={{
-          duration: 10,
+          duration: 8,
           repeat: Infinity,
           repeatType: 'mirror',
           repeatDelay: 1,
           ease: 'easeInOut'
         }}
-        className="absolute inset-0 h-full flex justify-center items-center text-[12rem] overflow-hidden blur-xl"> a അ अ  </motion.div>
+        className="absolute inset-0 h-full flex justify-center items-center text-[16rem] font-black blur-2xl">അ</motion.div>
     </section>
   )
 }

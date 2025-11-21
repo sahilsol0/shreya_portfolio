@@ -15,9 +15,9 @@ function Contact() {
             <li key={i} 
               className="flex border-b border-primary gap-2"
             >
-              <a href={social.link} target="redirect" className="bg-primary w-12 h-12 text-2xl text-background flex items-center justify-center leading-none">{i+1}</a>
-              <span className="flex flex-col">
-                <h1>{social.platform}</h1>
+              <a href={social.link} target="redirect" className="bg-primary w-12 h-12 text-2xl text-background flex items-center justify-center">{i+1}</a>
+              <span className="flex flex-col justify-between">
+                <h1 className="">{social.platform}</h1>
                 <a href={social.link} target="redirect" className="text-primary">{social.linkText}</a>
               </span>
             </li>

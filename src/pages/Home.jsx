@@ -2,6 +2,7 @@ import { useState, useRef, useContext } from "react"
 import {motion, useTransform, useMotionValueEvent, useScroll } from "motion/react"
 import { Link } from "react-router"
 import HeroArt from "../components/HeroArt.jsx"
+import TextSplitter from "../components/TextSplitter.jsx"
 import { ScrollContext } from "../components/ScrollContext.js"
 import { useElementScroll } from "../hooks/useElementScroll.js"
 
@@ -33,7 +34,7 @@ function Home() {
     offset: ["start 0.8", "start 0"]
   })
   const orbAnimation = {
-    opacity: useTransform(orbScroll.scrollYProgress, [0, 0.7, 1], [0, 1, 0.75]),
+    opacity: useTransform(orbScroll.scrollYProgress, [0, 0.7, 1], [0, 1, 0.70]),
     y: useTransform(orbScroll.scrollYProgress, [0, 1], ["-10vh", "50vh"]),
     scale: useTransform(orbScroll.scrollYProgress, [0, 0.75, 1], [0.1, 0.2, 2])
   }
@@ -99,37 +100,6 @@ function Home() {
       </div>
       <p className="mt-96 text-xs text-primary">[ Thanks for visiting my portfolio. Use the menu below to see other parts of the website. ]</p>
     </>
-  )
-}
-
-function TextSplitter({text, className}) {
-  const words= text.split(" ")
-  const wordScroll = useElementScroll({
-    offset: ["start 50%", "start 15%"]
-  })
-  
-  return (
-    <p ref={wordScroll.elementRef} className={`flex flex-wrap gap-x-2 leading-snug ${className}`}>
-      {
-        words.map((word, i)=>{
-          const start = i / words.length
-          const end = start + (1 / words.length)
-         
-          const wordAnimation= {
-            opacity: useTransform(wordScroll.scrollYProgress, [start, end], [0, 1]),
-            scale: useTransform(wordScroll.scrollYProgress, [start, end], [0.8, 1])
-          }
-          return ( <motion.span 
-            key={i} 
-            style={wordAnimation}
-            className="inline-block"
-            >
-              {word}
-            </motion.span>
-          )
-        })
-      }
-    </p>
   )
 }
 
