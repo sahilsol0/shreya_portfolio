@@ -9,6 +9,12 @@
   --color-foreground: oklch(0.3228 0.0551 28.83);
 }
 
+.dark {
+  --color-primary: oklch(0.7998 0.1035 48);
+  --color-foreground: oklch(0.885 0.0331 85.48);
+  --color-background: oklch(0.3228 0.0551 28.83);
+}
+
 body {
   background: black;
   box-sizing: border-box;

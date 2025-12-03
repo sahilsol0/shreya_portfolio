@@ -5,6 +5,7 @@ import { useLocation } from "react-router"
 import Header from "./components/Header.jsx"
 import Nav from "./components/Nav.jsx"
 import AnimatedRoute from "./components/AnimatedRoute.jsx"
+import { ThemeProvider } from './contexts/ThemeContext.jsx'
 
 function App() {
   const location = useLocation()
@@ -21,11 +22,13 @@ function App() {
 
   return (
     <ReactLenis root options={{ autoRaf: false , lerp: 0.1, duration: 1.5, smoothTouch: true}} ref={lenisRef}>
-      {location.pathname === '/summary' ? null : <Header/>}
-      {location.pathname === '/summary' ? null : <Nav />}
-      <div className="relative font-sans bg-background">
-        <AnimatedRoute />
-      </div>
+      <ThemeProvider>
+        {location.pathname === '/summary' ? null : <Header/>}
+        {location.pathname === '/summary' ? null : <Nav />}
+        <div className="relative font-sans bg-background">
+          <AnimatedRoute />
+        </div>
+      </ThemeProvider>
     </ReactLenis>
   )
 }

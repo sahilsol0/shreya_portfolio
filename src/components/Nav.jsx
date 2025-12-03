@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Link, useLocation } from "react-router"
 import { motion, AnimatePresence } from "motion/react"
+import DarkModeToggle from './DarkModeToggle.jsx'
+import menu from '../assets/vectors/menu.svg'
 
 function MenuButton({ isOpen, toggle }) {
   return (
@@ -9,9 +11,16 @@ function MenuButton({ isOpen, toggle }) {
       whileTap= {{
         scale: 0.9
       }}
-      className="px-4 py-2 border border-primary z-50 bg-background"
+      className="px-4 py-2 border border-primary z-50 bg-background text-primary"
     >
-      {isOpen ? "Close" : "Menu"}
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      {
+      isOpen ? 
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      :
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.499 8.248h15m-15 7.501h15" />
+      }
+      </svg>
     </motion.button>
   )
 }
@@ -33,7 +42,7 @@ export default function Nav() {
     <AnimatePresence mode="wait">
       {location.pathname !== "/" && (
         <motion.div
-          className="w-screen flex flex-col items-center justify-center fixed bottom-0 pb-4 z-50 text-foreground"
+          className="w-screen flex justify-center fixed bottom-0 pb-4 z-50 text-foreground h-16"
           key= {location.pathname}
           initial={{ y: 150, opacity: 0 }}
           animate={{
@@ -48,24 +57,22 @@ export default function Nav() {
           }}
         >
           <MenuButton isOpen={isOpen} toggle={toggleMenu} />
-
+          <motion.span whileTap={{scale: 0.9}} className="flex items-center justify-around bg-primary aspect-square h-full z-50"><DarkModeToggle/></motion.span>
           {/* Animated tray */}
           <AnimatePresence>
             {isOpen && (
               <motion.nav
                 key="menu"
-                initial={{ y: 10, opacity: 0, scale:0.9 }}
+                initial={{ y: 10, opacity: 0}}
                 animate={{
                   y: 0,
                   opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.1, ease: 'easeIn' },
+                  transition: { duration: 0.1, ease: 'easeOut' },
                 }}
                 exit={{
                   y: 10,
                   opacity: 0,
-                  scale:0.9,
-                  transition: { duration: 0.1, ease: 'easeIn' },
+                  transition: { duration: 0.1, ease: 'easeOut' },
                 }}
                 className="absolute bottom-0 pb-18"
               >
