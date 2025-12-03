@@ -89,7 +89,7 @@ function Home() {
       <p className="mt-8">So I wrote the entrance exam for architecture and now I'm in first year of B.Arch doing architecture things<span><span className="text-primary">*</span></span>.<br/><span className="text-[0.7rem] text-primary line-height-1">[*Which mostly involves losing sleep over assignments you know your professor will ask you to redo for the 750th time.]</span></p>
       </section>
       <div className="h-screen relative flex items-center pt-72">
-        <TextSplitter className="font-serif text-3xl z-10 w-11/12" text= {"\"This exposure to cultures has shaped how I study and approach architecture today. To me, a good design is one that elevates a place not merely through aesthetics, but also by respecting and empowering the people and their culture.\""}  />
+        <TextSplitter className="font-serif tracking-normal text-3xl z-10 w-11/12" text= {"\"This exposure to cultures has shaped how I study and approach architecture today. To me, a good design is one that elevates a place not merely through aesthetics, but also by respecting and empowering the people and their culture.\""}  />
         <div className="absolute inset-0 h-full w-full flex items-start justify-center"
         >
           <motion.div
