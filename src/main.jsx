@@ -5,6 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router"
 import './index.css'
 import App from './App.jsx'
 
+if (import.meta.env.DEV) {
+  import("eruda").then(eruda => {
+    eruda.default.init();
+  });
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
