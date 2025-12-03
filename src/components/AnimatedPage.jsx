@@ -8,11 +8,7 @@ const slide = {
   initial: { left: '100vw', opacity: 0 },
   enter: { 
     left: '100vw',
-    opacity: 1,
-    transition: { 
-      duration: 0.8, 
-      ease: [0.76, 0, 0.24, 1]
-    }
+    opacity: 1
   },
   exit: {
     left: 0,
@@ -37,15 +33,15 @@ const perspective = {
     scale: 1, 
     filter: 'blur(0px)',
     transition: { 
-      duration: 0.8, 
+      duration: 0, 
       ease: [0.76, 0, 0.24, 1]
     }
   },
   exit: { 
-    x: -100,
-    y: 100,
+    x: -40,
+    y: 40,
     scale: 0.9,
-    opacity: 0.5,
+    opacity: 0.2,
     filter: 'blur(3px)',
     transition: { 
       duration: 0.6, 

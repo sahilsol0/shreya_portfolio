@@ -24,12 +24,11 @@ export default function Header() {
             }
           }}
           exit={{
-            y: 10,
-            x: -8,
+            y: -5,
             opacity: 0,
             transition: {
-              duration: 0.4,
-              ease: [0.76, 0, 0.24, 1]
+              duration: 0.1,
+              ease: 'easeOut'
             }
           }}
         >
