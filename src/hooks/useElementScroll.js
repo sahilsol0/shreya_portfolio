@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react"
 import { useScroll } from "motion/react"
-import { ScrollContext } from "../components/ScrollContext.js"
+import { ScrollContext } from "../contexts/ScrollContext.js"
 
 export function useElementScroll({ offset }) {
   const scrollContainer = useContext(ScrollContext)

@@ -3,7 +3,6 @@ import {motion, useTransform, useMotionValueEvent, useScroll } from "motion/reac
 import { Link } from "react-router"
 import HeroArt from "../components/HeroArt.jsx"
 import TextSplitter from "../components/TextSplitter.jsx"
-import { ScrollContext } from "../components/ScrollContext.js"
 import { useElementScroll } from "../hooks/useElementScroll.js"
 
 function Home() {
