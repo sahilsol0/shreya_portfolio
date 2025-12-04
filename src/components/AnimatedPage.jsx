@@ -22,13 +22,13 @@ const slide = {
 
 const perspective = {
   initial: { 
-    x: 0,
+    x: '0vw',
     y: 0,
     scale: 1, 
     filter: 'blur(0px)'
   },
   enter: { 
-    x: 0,
+    x: '0vw',
     y: 0,
     scale: 1, 
     filter: 'blur(0px)',
@@ -38,7 +38,7 @@ const perspective = {
     }
   },
   exit: { 
-    x: -40,
+    x: '-10vw',
     y: 40,
     scale: 0.9,
     opacity: 0.2,
